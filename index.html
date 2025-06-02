@@ -154,6 +154,62 @@
             margin: 0 auto;
         }
 
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .benefits {
+            margin-top: 1.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .benefit-item span {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
         /* ===== Products Section ===== */
         .products {
             padding: 5rem 0;
@@ -406,6 +462,14 @@
             .hero p {
                 font-size: 1rem;
             }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-bottom: 2rem;
+            }
         }
     </style>
 </head>
@@ -417,7 +481,8 @@
                 <div class="logo">SNEP <span>by Ani</span></div>
                 <ul class="nav-links">
                     <li><a href="#home">Kryefaqja</a></li>
-                    <li><a href="#about">Rreth Nesh</a></li>
+                    <li><a href="#about">Rreth Meje</a></li>
+                    <li><a href="#products">Produktet</a></li>
                     <li><a href="#testimonials">Dëshmitë</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
@@ -443,14 +508,42 @@
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>Pse SNEP?</h2>
-                <p>Bazuar në dijen shkencore dhe dashurinë për natyrën, SNEP ofron zgjidhje të sigurta për shëndetin dhe energjinë tënde.</p>
+                <h2>Rreth Meje</h2>
+                <p>Njohuni më mirë me udhëtimin tim dhe filosofinë e SNEP.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Dr. Ani">
+                </div>
+                <div class="about-text">
+                    <h3>Përshëndetje, unë jam Ani!</h3>
+                    <p>
+                        Kam kaluar vetë rrugën që po ndjek ti. Kam provuar shumë gjëra pa sukses... derisa gjeta produktet Snep. 
+                        <strong>Nuk bëhet fjalë për mrekulli – por për zgjedhje të mençura dhe kujdes të përditshëm.</strong> 
+                        Unë jam këtu për të ndarë me ty gjithçka që kam mësuar.
+                    </p>
+                    <div class="benefits">
+                        <div class="benefit-item">
+                            <span>✅</span>
+                            <p>Produkte 100% origjinale Snep</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span>✅</span>
+                            <p>Këshilla falas nga një mjeke me përvojë</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span>✅</span>
+                            <p>Mbështetje e vazhdueshme gjatë rrugës tuaj</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; font-style: italic;">🤝 <strong>Le të fillojmë së bashku!</strong></p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-      <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
             <div class="section-title">
@@ -491,6 +584,7 @@
                     </div>
                     <div class="product-info">
                         <span class="product-category">Për Energjinë</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -545,7 +639,7 @@
             <div class="footer-logo">SNEP by Ani</div>
             <ul class="footer-links">
                 <li><a href="#home">Kryefaqja</a></li>
-                <li><a href="#about">Rreth Nesh</a></li>
+                <li><a href="#about">Rreth Meje</a></li>
                 <li><a href="#products">Produktet</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
