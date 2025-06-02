@@ -12,6 +12,7 @@
             --light: #F5F5F5;
             --dark: #333;
             --white: #FFF;
+            --whatsapp: #25D366;
         }
 
         * {
@@ -124,12 +125,26 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
             background: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
         }
 
         /* ===== About Section ===== */
@@ -240,8 +255,8 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .product-card {
@@ -250,6 +265,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
@@ -274,6 +291,9 @@
 
         .product-info {
             padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-category {
@@ -283,25 +303,47 @@
             padding: 0.3rem 0.8rem;
             border-radius: 5px;
             font-size: 0.8rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            align-self: flex-start;
         }
 
         .product-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
         }
 
         .product-description {
-            color: #666;
+            color: #555;
             margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .product-benefit {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-benefit span {
+            margin-right: 8px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        .product-benefit p {
+            color: #555;
             font-size: 0.9rem;
         }
 
-        .product-price {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+        .product-cta {
+            margin-top: 1.2rem;
+            text-align: center;
+            font-style: italic;
+            color: var(--dark);
+            font-weight: 500;
         }
 
         /* ===== Testimonials ===== */
@@ -362,10 +404,38 @@
             background: var(--light);
         }
 
+        .contact-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            width: 280px;
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
         .social-links {
             display: flex;
             justify-content: center;
             margin-top: 2rem;
+            gap: 1rem;
         }
 
         .social-link {
@@ -377,7 +447,6 @@
             background: var(--primary);
             color: var(--white);
             border-radius: 50%;
-            margin: 0 10px;
             text-decoration: none;
             font-size: 1.3rem;
             transition: all 0.3s;
@@ -407,6 +476,7 @@
             justify-content: center;
             list-style: none;
             margin-bottom: 1rem;
+            flex-wrap: wrap;
         }
 
         .footer-links li {
@@ -469,6 +539,15 @@
             
             .about-image {
                 margin-bottom: 2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-options {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -557,33 +636,95 @@
                 <button class="filter-btn" data-filter="energy">Për Energjinë</button>
             </div>
             <div class="product-grid">
-                <!-- Product 1 -->
+                <!-- Product 1 - Kalosnep -->
                 <div class="product-card" data-category="health">
                     <div class="product-img">
-                        <img src="image/kalosnep.png" alt="Vitaminat Natyrale">
+                        <img src="image/kalosnep.png" alt="Kalosnep">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">kalosnep</span>
+                        <span class="product-category">Detoksifikim</span>
+                        <h3 class="product-title">Kalosnep</h3>
+                        <p class="product-description">Pastrimi që fillon nga zorrët dhe ndikon te gjithçka tjetër. Kalosnep është një mik i sistemit tretës. Ndihmon në eliminimin e toksinave, fryrjeve dhe kapsllëkut – për një ndjesi lehtësie që e ndien që ditët e para.</p>
+                        
+                        <div class="product-benefit">
+                            <span>✨</span>
+                            <p>Pse e dua unë? Sepse më ktheu ndjesinë e barkut të sheshtë pa dhimbje dhe mundime.</p>
+                        </div>
+                        
+                        <p class="product-cta">📩 Porosit tani duke më shkruar në WhatsApp ose Instagram</p>
+                        
+                        <a href="https://wa.me/355692810494" class="btn btn-whatsapp" target="_blank">
+                            <span>WhatsApp</span>
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Product 2 -->
-                <div class="product-card" data-category="beauty">
+                <!-- Product 2 - Olivox -->
+                <div class="product-card" data-category="health">
                     <div class="product-img">
-                        <img src="image/kgsnep.png" alt="Krem Natyral">
+                        <img src="https://images.unsplash.com/photo-1601524909168-8a7b71d8b91b?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Olivox">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Per Peshen</span>
+                        <span class="product-category">Imunitet</span>
+                        <h3 class="product-title">Olivox</h3>
+                        <p class="product-description">Mbrojtje e qelizave nga brenda – falë fuqisë së ullirit dhe antioksidantëve. Në një botë plot stres e ndotje, Olivox është një aleat i fuqishëm për imunitetin dhe energjinë.</p>
+                        
+                        <div class="product-benefit">
+                            <span>✨</span>
+                            <p>Pse e përdor çdo ditë? Sepse ndiej më pak lodhje dhe më shumë fokus.</p>
+                        </div>
+                        
+                        <p class="product-cta">📩 Dua të të tregoj si mund të ndihmojë edhe ty.</p>
+                        
+                        <a href="https://wa.me/355692810494" class="btn btn-whatsapp" target="_blank">
+                            <span>WhatsApp</span>
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Product 3 -->
+                <!-- Product 3 - Snep The Mix -->
+                <div class="product-card" data-category="health">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Snep The Mix">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Menaxhim Peshe</span>
+                        <h3 class="product-title">Snep The Mix</h3>
+                        <p class="product-description">Një vakt i shëndetshëm dhe i lehtë për menaxhimin e peshës. I pasur me proteina, fibra, dhe shije fantastike – The Mix është perfekt për mëngjes apo darkë pa ndjenja faji.</p>
+                        
+                        <div class="product-benefit">
+                            <span>✨</span>
+                            <p>Pse më pëlqen? Sepse është si një përqafim që më ngop pa më rënduar.</p>
+                        </div>
+                        
+                        <p class="product-cta">📩 Më pyet tani se cila shije të përshtatet më mirë!</p>
+                        
+                        <a href="https://wa.me/355692810494" class="btn btn-whatsapp" target="_blank">
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 - RealKomplex -->
                 <div class="product-card" data-category="energy">
                     <div class="product-img">
-                        <img src="image/senpi2.png" alt="Çaj Energjik">
+                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="RealKomplex">
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Për Energjinë</span>
+                        <span class="product-category">Energji</span>
+                        <h3 class="product-title">RealKomplex</h3>
+                        <p class="product-description">Kur trupi yt ka nevojë për ndihmë të shpejtë për të rifituar energjinë. Magnez, kalium, vitaminë C – kombinimi i duhur për ditët kur ndihesh pa fuqi.</p>
+                        
+                        <div class="product-benefit">
+                            <span>✨</span>
+                            <p>Pse e përdor shpesh? Sepse ndihmon edhe me kërcitjet e muskujve dhe përqendrimin.</p>
+                        </div>
+                        
+                        <p class="product-cta">📩 Po të duhet ndihmë për të zgjedhur dozën e duhur – jam këtu!</p>
+                        
+                        <a href="https://wa.me/355692810494" class="btn btn-whatsapp" target="_blank">
+                            <span>WhatsApp</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -623,11 +764,33 @@
         <div class="container">
             <div class="section-title">
                 <h2>Na Kontaktoni</h2>
-                <p>Na ndiqni në Instagram për më shumë këshilla!</p>
+                <p>Na kontaktoni për këshilla dhe informacione të tjera</p>
             </div>
+            
+            <div class="contact-options">
+                <div class="contact-card">
+                    <h3>WhatsApp</h3>
+                    <p>Për porosi të shpejta dhe pyetje</p>
+                    <a href="https://wa.me/355692810494" class="btn btn-whatsapp" target="_blank">
+                        <span>Na shkruani</span>
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Instagram</h3>
+                    <p>Për më shumë këshilla dhe informacione</p>
+                    <a href="https://www.instagram.com/ani.snep.life" class="btn" target="_blank" style="background: #E1306C;">
+                        <span>Na ndiqni</span>
+                    </a>
+                </div>
+            </div>
+            
             <div class="social-links">
                 <a href="https://www.instagram.com/ani.snep.life" class="social-link" target="_blank" aria-label="Instagram">
                     IG
+                </a>
+                <a href="https://wa.me/355692810494" class="social-link" target="_blank" aria-label="WhatsApp" style="background: var(--whatsapp);">
+                    WA
                 </a>
             </div>
         </div>
@@ -641,6 +804,7 @@
                 <li><a href="#home">Kryefaqja</a></li>
                 <li><a href="#about">Rreth Meje</a></li>
                 <li><a href="#products">Produktet</a></li>
+                <li><a href="#testimonials">Dëshmitë</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
             <p class="copyright">© 2023 SNEP by Ani. Të gjitha të drejtat e rezervuara.</p>
